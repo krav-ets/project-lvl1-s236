@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { sayWelcome, calcGame, sayHello } from '../..';
+import game from '../..';
 
-sayWelcome('What is the result of the expression?\n');
-sayHello();
-calcGame();
+game('calc', 'What is the result of the expression?\n');
