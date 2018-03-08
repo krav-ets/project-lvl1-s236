@@ -3,7 +3,7 @@ import game from '..';
 const description = 'Answer "yes" if number even otherwise answer "no".';
 const getRandomNum = () => Math.floor(Math.random() * 100) + 1;
 
-const makeResult = () => {
+const genQuestionAndAnswer = () => {
   const quest = getRandomNum();
   const isEven = (num) => {
     if (num % 2 === 0) return 'yes';
@@ -13,4 +13,4 @@ const makeResult = () => {
   return [quest, rightAnswer];
 };
 
-export default () => game(makeResult, description);
+export default () => game(genQuestionAndAnswer, description);

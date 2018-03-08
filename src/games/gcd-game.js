@@ -2,7 +2,8 @@ import game from '..';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const getRandomNum = () => Math.floor(Math.random() * 100) + 1;
-const makeResult = () => {
+
+const genQuestionAndAnswer = () => {
   const oneNum = getRandomNum();
   const twoNum = getRandomNum();
   const quest = `${oneNum} ${twoNum}`;
@@ -13,4 +14,5 @@ const makeResult = () => {
   const rightAnswer = calculateGcd(oneNum, twoNum);
   return [quest, rightAnswer];
 };
-export default () => game(makeResult, description);
+
+export default () => game(genQuestionAndAnswer, description);

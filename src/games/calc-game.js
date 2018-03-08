@@ -9,7 +9,7 @@ const getRandomSign = () => {
   return '*';
 };
 
-const makeResult = () => {
+const genQuestionAndAnswer = () => {
   const oneNum = getRandomNum();
   const twoNum = getRandomNum();
   const sign = getRandomSign();
@@ -23,4 +23,4 @@ const makeResult = () => {
   return [quest, rightAnswer];
 };
 
-export default () => game(makeResult, description);
+export default () => game(genQuestionAndAnswer, description);

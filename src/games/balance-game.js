@@ -3,7 +3,7 @@ import game from '..';
 const description = 'Balance the given number.';
 const getRandomNum = () => Math.floor(Math.random() * 10000);
 
-const makeResult = () => {
+const genQuestionAndAnswer = () => {
   const oneNum = getRandomNum();
   const quest = `${oneNum}`;
   const calculateBalance = (num) => {
@@ -24,4 +24,4 @@ const makeResult = () => {
   return [quest, rightAnswer];
 };
 
-export default () => game(makeResult, description);
+export default () => game(genQuestionAndAnswer, description);
