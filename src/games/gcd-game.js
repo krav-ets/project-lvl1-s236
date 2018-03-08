@@ -6,11 +6,11 @@ const makeResult = () => {
   const oneNum = getRandomNum();
   const twoNum = getRandomNum();
   const quest = `${oneNum} ${twoNum}`;
-  const gcd = (a, b) => {
+  const calculateGcd = (a, b) => {
     if (b === 0) return a;
-    return gcd(b, a % b);
+    return calculateGcd(b, a % b);
   };
-  const rightAnswer = gcd(oneNum, twoNum);
+  const rightAnswer = calculateGcd(oneNum, twoNum);
   return [quest, rightAnswer];
 };
 export default () => game(makeResult, description);
