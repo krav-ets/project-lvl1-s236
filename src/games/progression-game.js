@@ -1,14 +1,18 @@
 import game from '..';
+import getRandomNum from '../lib/random';
 
 const description = 'What number is missing in this progression?';
-const getRandomNum = () => Math.floor(Math.random() * 100);
-const getRandomStep = () => Math.floor(Math.random() * 10) + 1;
-const getRandomIndex = () => Math.floor(Math.random() * 10);
 
-const genStrProgression = (start, step, count, str, acc) => {
-  if (count > 10) return str;
-  if (count === 1) return genStrProgression(start, step, count + 1, `${start}`, start + step);
-  return genStrProgression(start, step, count + 1, `${str},${acc}`, acc + step);
+const newElProgriession = (prevEl, step) => prevEl + step;
+
+const genArrProgression = (start, step) => {
+  const iter = (count, arr, prevEl) => {
+    if (count >= 10) return arr;
+    const newEl = newElProgriession(prevEl, step);
+    const newArr = arr.concat(newEl);
+    return iter(count + 1, newArr, newEl);
+  };
+  return iter(1, [start], start);
 };
 
 const genQuest = (arr, index) => {
@@ -18,11 +22,10 @@ const genQuest = (arr, index) => {
 };
 
 const genQuestionAndAnswer = () => {
-  const start = getRandomNum();
-  const step = getRandomStep();
-  const index = getRandomIndex();
-  const stringProgression = genStrProgression(start, step, 1, '');
-  const arrayProgression = stringProgression.split(',');
+  const start = getRandomNum(0, 99);
+  const step = getRandomNum(1, 10);
+  const index = getRandomNum(0, 9);
+  const arrayProgression = genArrProgression(start, step);
   const rightAnswer = arrayProgression[index];
   const quest = genQuest(arrayProgression, index);
   return [quest, rightAnswer];

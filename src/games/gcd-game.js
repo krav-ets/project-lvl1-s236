@@ -1,11 +1,11 @@
 import game from '..';
+import getRandomNum from '../lib/random';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const getRandomNum = () => Math.floor(Math.random() * 100) + 1;
 
 const genQuestionAndAnswer = () => {
-  const oneNum = getRandomNum();
-  const twoNum = getRandomNum();
+  const oneNum = getRandomNum(1, 100);
+  const twoNum = getRandomNum(1, 100);
   const quest = `${oneNum} ${twoNum}`;
   const calculateGcd = (a, b) => {
     if (b === 0) return a;

@@ -1,10 +1,10 @@
 import game from '..';
+import getRandomNum from '../lib/random';
 
 const description = 'Balance the given number.';
-const getRandomNum = () => Math.floor(Math.random() * 10000);
 
 const genQuestionAndAnswer = () => {
-  const oneNum = getRandomNum();
+  const oneNum = getRandomNum(11, 9999);
   const quest = `${oneNum}`;
   const calculateBalance = (num) => {
     const numToStr = String(num);

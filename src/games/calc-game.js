@@ -1,17 +1,17 @@
 import game from '..';
+import getRandomNum from '../lib/random';
 
 const description = 'What is the result of the expression?';
-const getRandomNum = () => Math.floor(Math.random() * 100) + 1;
 const getRandomSign = () => {
-  const num = getRandomNum();
-  if (num <= 33) return '+';
-  if (num <= 67) return '-';
+  const num = getRandomNum(1, 3);
+  if (num === 1) return '+';
+  if (num === 2) return '-';
   return '*';
 };
 
 const genQuestionAndAnswer = () => {
-  const oneNum = getRandomNum();
-  const twoNum = getRandomNum();
+  const oneNum = getRandomNum(1, 100);
+  const twoNum = getRandomNum(1, 100);
   const sign = getRandomSign();
   const calculate = (s, num1, num2) => {
     if (s === '+') return num1 + num2;
