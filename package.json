@@ -33,14 +33,14 @@
   },
   "homepage": "https://github.com/krav-ets/project-lvl1-s236#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.18.2",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "*"
   },
   "dependencies": {
     "readline-sync": "^1.4.9"
